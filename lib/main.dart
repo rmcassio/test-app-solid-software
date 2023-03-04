@@ -20,6 +20,8 @@ class MyApp extends StatelessWidget {
 }
 
 class MyHomePage extends StatefulWidget {
+  final String heyThere = 'Hey there';
+  final double fontSize = 36.0;
   const MyHomePage({super.key});
 
   @override
@@ -27,8 +29,6 @@ class MyHomePage extends StatefulWidget {
 }
 
 class _MyHomePageState extends State<MyHomePage> {
-  final String heyThere = 'Hey there';
-  final double fontSize = 36.0;
   Color? generatedColor;
 
   @override
@@ -40,9 +40,9 @@ class _MyHomePageState extends State<MyHomePage> {
           color: generatedColor ?? Colors.white,
           child: Center(
             child: Text(
-              heyThere,
+              widget.heyThere,
               style: TextStyle(
-                fontSize: fontSize,
+                fontSize: widget.fontSize,
                 fontWeight: FontWeight.bold,
               ),
             ),
